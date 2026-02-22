@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nintendo Switch</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="preloader">
+    <div class="preloader-div">
+      <img src="Game Space.png" alt="Logo" class="logo">
+      <div class="loader-ring"></div>
+      <h2 class="loading-text">Loading<span></span></h2>
+    </div>
+    
+  </div>
+  <!-- Storage Selection Modal -->
+  <div id="storageModal" class="modal">
+    <div class="modal-content">
+      <h2>SD Card Storage</h2>
+      <p>Select the storage of the SD Card</p>
+      <button onclick="selectStorage(128)">128 GB</button>
+      <button onclick="selectStorage(256)">256 GB</button>
+      <button onclick="selectStorage(512)">512 GB</button>
+    </div>
+  </div>
+
+
+  <!-- Hamburger Menu -->
+  <div class="hamburger-menu" onclick="toggleSidebar()">☰</div>
+
+  <div class="header">
+    <img src="Game Space.png" alt="Logo" class="logo">
+    <h1>GAME SPACE</h1>
+  </div>
+
+  <!-- Add the GIF here -->
+  <div class="playstation-container">
+    <img src="Background.webp" alt="website picture">
+  </div>
+
+
+
+  <!-- Sidebar for Selected Games -->
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-header">
+    <h3>Selected Games</h3>
+    <button class="close-sidebar" onclick="toggleSidebar()">×</button>
+  </div>
+  <div id="selected-games-list"></div>
+</div>
+
+
+  <div class="options">
+    <div class="user_storage">
+      <button id="500gb" onclick="changeStorageTo500gb()" role="button" class="button-33">128 GB</button>
+      <button id="1tb" onclick="changeStorageTo1tb()" role="button" class="button-32">256 GB</button>
+      <button id="2tb" onclick="changeStorageTo2tb()" role="button" class="button-32">512 GB</button>
+    </div>
+    <div class="user_control">
+      <button id="track"><span id="spaceLeft"></span> Space Left</button>
+      <button id="clear">Reset</button>
+      <button id="sendWhatsApp">Send to WhatsApp</button>
+    </div>
+  </div>
+
+<div class="search-container">
+  <div class="search-wrapper">
+    <input type="text" id="searchBar" placeholder="Search games or size...">
+    <span id="clearSearch">&times;</span>
+  </div>
+</div>
+
+
+  <div class="games">
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="1.webp" alt="EA SPORTS FC 26">
+      </div>
+      <div class="info">
+        <p>EA SPORTS FC 26 (العربية)</p>
+        <p>Storage: 36.8 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="2.webp" alt="NBA 2K26">
+      </div>
+      <div class="info">
+        <p>NBA 2K26</p>
+        <p>Storage: 10.1 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="50.webp" alt="Minecraft">
+      </div>
+      <div class="info">
+        <p>Minecraft</p>
+        <p>Storage: 0.616 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="73.webp" alt="SUPER MARIO ODYSSEY">
+      </div>
+      <div class="info">
+        <p>SUPER MARIO ODYSSEY</p>
+        <p>Storage: 5.2 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="46.webp" alt="Luigi's Mansion 3">
+      </div>
+      <div class="info">
+        <p>Luigi's Mansion 3</p>
+        <p>Storage: 6.3 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="45.webp" alt="Little Nightmares III">
+      </div>
+      <div class="info">
+        <p>Little Nightmares III</p>
+        <p>Storage: 6.8 GB GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="14.webp" alt="Disney">
+      </div>
+      <div class="info">
+        <p>Disney Dreamlight Valley</p>
+        <p>Storage: 8.3 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="78.webp" alt="The Legend of Zelda Breath of the Wild">
+      </div>
+      <div class="info">
+        <p>The Legend of Zelda Breath of the Wild</p>
+        <p>Storage: 13.4 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="59.webp" alt="Pokémon Legends: Arceus">
+      </div>
+      <div class="info">
+        <p>Pokémon Legends: Arceus</p>
+        <p>Storage: 6.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="18.webp" alt="Everybody 1-2-Switch!">
+      </div>
+      <div class="info">
+        <p>Everybody 1-2-Switch!</p>
+        <p>Storage: 3.3 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="54.webp" alt="Nickelodeon All-Star Brawl">
+        </div>
+      <div class="info">
+        <p>Nickelodeon All-Star Brawl</p>
+        <p>Storage: 2.8 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="55.webp" alt="Nintendo Switch Sports">
+      </div>
+      <div class="info">
+        <p>Nintendo Switch Sports</p>
+        <p>Storage: 1.4 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="21.webp" alt="Garten of Banban 2">
+      </div>
+      <div class="info">
+        <p>Garten of Banban 2</p>
+        <p>Storage: 0.508 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+       <img src="22.webp" alt="Garten of Banban 3">
+      </div>
+      <div class="info">
+        <p>Garten of Banban 3</p>
+        <p>Storage: 0.488 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="23.webp" alt="Garten of Banban 4">
+      </div>
+      <div class="info">
+        <p>Garten of Banban 4</p>
+        <p>Storage: 0.508 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+       <img src="24.webp" alt="Garten of Banban 6">
+      </div>
+      <div class="info">
+        <p>Garten of Banban 6</p>
+        <p>Storage: 0.569 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="25.webp" alt="Garten of Banban 7">
+      </div>
+      <div class="info">
+        <p>Garten of Banban 7</p>
+        <p>Storage: 0.757 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+       <img src="3.webp" alt="Arcade Archives VS. SUPER MARIO BROS.">
+      </div>
+      <div class="info">
+        <p>Arcade Archives VS. SUPER MARIO BROS.</p>
+        <p>Storage: 0.07 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="12.webp" alt="Crash™ Team Racing Nitro-Fueled">
+      </div>
+      <div class="info">
+        <p>Crash™ Team Racing Nitro-Fueled</p>
+        <p>Storage: 5.7 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+        <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="66.webp" alt="Sonic Superstars">
+      </div>
+      <div class="info">
+        <p>Sonic Superstars</p>
+        <p>Storage: 4.1 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="39.webp" alt="Kirby Star Allies">
+      </div>
+      <div class="info">
+        <p>Kirby Star Allies</p>
+        <p>Storage: 3.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="35.webp" alt="House of Golf 2">
+      </div>
+      <div class="info">
+        <p>House of Golf 2</p>
+        <p>Storage: 13.4 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+      <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="41.webp" alt="LEGOⓇ MARVEL Super Heroes 2">
+      </div>
+      <div class="info">
+        <p>LEGOⓇ MARVEL Super Heroes 2</p>
+        <p>Storage: 11.9 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="15.webp" alt="DOOM">
+      </div>
+      <div class="info">
+        <p>DOOM</p>
+        <p>Storage: 13.6 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="68.webp" alt="Splatoon 2">
+      </div>
+      <div class="info">
+        <p>Splatoon 2</p>
+        <p>Storage: 3.1 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="4.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="5.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="6.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="7.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="8.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="9.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="10.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="11.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="13.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="16.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="17.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="19.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="20.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="26.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="27.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="28.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="29.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="30.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="31.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="32.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="33.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="34.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="36.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="37.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="38.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="40.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="42.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="43.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="44.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="47.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="48.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="49.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="51.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="52.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="53.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="56.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="57.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="58.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="60.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="61.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="62.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="63.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="64.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="65.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="67.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="69.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="70.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="71.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="72.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="74.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="75.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="76.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="77.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="79.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="80.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="81.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="82.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="83.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="84.webp" alt="GAME">
+      </div>
+      <div class="info">
+        <p>GAME</p>
+        <p>Storage: 0.0 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+</div>
+  <div class="footer">
+    <img src="Game Space.png" alt="game space">
+    <h1>GAME SPACE</h1>
+  </div>
+  <div class="alert">
+    <p>You are out of storage!</p>
+  </div>
+  <script src="script.js"></script>
+  </body>
+</html>
